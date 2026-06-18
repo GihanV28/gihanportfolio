@@ -51,7 +51,7 @@ export default function Layout({ children }) {
               Gihan Wanninayaka
             </h1>
             <p className="text-sm" style={{ opacity: 0.7 }}>
-              Web Designer & Developer
+              Full Stack Software Engineer
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main className="container py-12">
+      <main className="container pb-12" style={{ paddingTop: '2.5rem' }}>
         {children}
       </main>
 

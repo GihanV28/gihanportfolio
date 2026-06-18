@@ -3,50 +3,63 @@ import { useState, useEffect } from 'react';
 const projects = [
   {
     id: 1,
-    title: 'IMPORT/EXPORT TRACKING SYSTEM - (ONGOING)',
-    description: 'A comprehensive web application for managing international trade operations with real-time shipment tracking and invoice generation. Features dual-portal architecture for administrators and clients with role-based access control.',
+    title: 'Import/Export Trade Management System',
+    description:
+      'Full-stack ERP application for managing international trade with real-time shipment tracking, invoice generation, and a dual-portal architecture (admin and client) with role-based access control.',
     keyContributions: [
-      'UI designing using figma',
-      'Developed responsive UI components using Next.js and Tailwind CSS',
-      'Implemented real-time tracking features with Firebase',
-      'Created a secure authentication and authorization system',
-      'Built RESTful API endpoints for data exchange'
+      'Developed responsive UI with Next.js and Tailwind CSS; implemented real-time data sync with Firebase',
+      'Built secure authentication, authorization system, and RESTful API layer for cross-portal data exchange',
     ],
-    techStack: 'Next.js | Firebase | TypeScript | Tailwind CSS | shadcn/ui | Figma',
-    link: '#'
+    techStack: 'Next.js | TypeScript | Firebase | Tailwind CSS | Shadcn UI | Figma',
+    link: '#',
   },
   {
     id: 2,
-    title: 'CRYPTO POSITION MANAGER & TRADING SIGNAL AGGREGATOR - (ONGOING)',
-    description: 'A full-stack cryptocurrency trading platform that automatically aggregates trading signals from Telegram channels and provides real-time position management with P&L tracking, manual trade execution, and secure user authentication.',
+    title: 'LifeLink – AI-Powered Blood Donation Management System',
+    description:
+      'Web-based blood donor matching platform for Sri Lanka combining ML-based donation prediction, geospatial proximity filtering, and ABO/Rh compatibility scoring for real-time hospital donor recommendations.',
     keyContributions: [
-      'Developed a full-stack cryptocurrency trading platform that aggregates real-time signals from Telegram and enables position management with live P&L tracking',
-      'Built modern Next.js 19 & React 19 frontend with 60+ UI components, WebSocket integration, and TypeScript; implemented Spring Boot 3.3 REST API with JWT authentication and PostgreSQL database',
-      'Architected secure user authentication with role-based access control, signal filtering (by pair type/channel), manual trading capabilities, and comprehensive trade history analytics'
+      'Built React/TypeScript frontend and FastAPI backend with role-differentiated access for donors, hospital staff, and admins',
+      'Trained stacking ensemble model (XGBoost + LightGBM + Random Forest + Logistic Regression meta-learner) on RFMT donor features achieving ROC-AUC of 0.78–0.82',
+      'Computed composite match score (0–100) combining ML prediction probability, blood type compatibility, geospatial proximity, and donor response history',
     ],
-    techStack: 'Next.js | React 19 | TypeScript | Tailwind CSS | Spring Boot | Java 17 | PostgreSQL | JWT | WebSocket | Maven | Docker',
-    link: '#'
+    techStack: 'React | TypeScript | FastAPI | Python | XGBoost | LightGBM | Random Forest | PostgreSQL | JWT',
+    link: '#',
   },
   {
     id: 3,
-    title: 'MARTIALMIND - A CUSTOMIZED MARTIAL ARTS TRAINING APP',
-    description: 'Developed a multiplatform app using AI-powered martial arts recommendation system that provides personalized nutrition plans and exercise routines. The system uses federated learning for data privacy, supervised learning for personalized recommendations, and reinforcement learning for engagement. Key features include BMI/BMR calculation, nutrition planning based on metabolic needs, and customized training regimens tailored to experience level and fitness goals',
-    techStack: 'Python | Flutter | PostgreSQL | Flask',
-    link: '#'
+    title: 'Adum Culture – Retail Order Management System',
+    description:
+      'Full-stack retail and order management platform for a clothing business featuring a point-of-sale system, inventory management, supplier and customer portals, HR module, and comprehensive business analytics.',
+    keyContributions: [
+      'Built React 19 frontend with Tailwind CSS, React Query, and Recharts for real-time dashboards covering sales, stock, and expenses',
+      'Developed Node.js/Express REST API with Prisma ORM on PostgreSQL (Supabase); implemented JWT auth with rate limiting and role-based access',
+      'Implemented POS, GRN, purchase orders, returns, cash transfers, supplier payments, and SMS notification services',
+    ],
+    techStack: 'React 19 | TypeScript | Tailwind CSS | Node.js | Express | Prisma | PostgreSQL | Supabase | JWT',
+    link: '#',
   },
   {
     id: 4,
-    title: 'ADVERTISING SHOWCASE WEBSITE',
-    description: 'Designed and developed a modern showcase website for an advertising company with dynamic content management, responsive design, and optimized performance.',
+    title: 'Online Clothing E-Commerce Platform',
+    description:
+      'Full-stack clothing e-commerce solution with a customer storefront, admin panel, and integrated payment processing.',
     keyContributions: [
-      'Built using Next.js for server-side rendering and SEO optimization',
-      'Implemented modern UI components using shadcn/ui library',
-      'Created smooth animations and transitions for enhanced user experience',
-      'Optimized image loading and performance'
+      'Built Next.js frontend with server-side rendering and SEO optimization; developed REST APIs for product, order, and user management',
+      'Implemented admin dashboard for inventory and content management; integrated OnePay payment gateway for secure checkout',
     ],
-    techStack: 'Next.js | shadcn/ui | JavaScript | Responsive Design',
-    link: 'https://promax-advertising.vercel.app/'
-  }
+    techStack: 'Next.js | Shadcn UI | JavaScript | Tailwind CSS | OnePay Payment Gateway',
+    link: 'https://promax-advertising.vercel.app/',
+  },
+  {
+    id: 5,
+    title: 'MartialMind – AI-Powered Martial Arts Training Application',
+    description:
+      'Personalized martial arts training platform using federated learning, supervised learning, and reinforcement learning to generate customized nutrition plans and exercise routines based on BMI/BMR and fitness goals.',
+    keyContributions: [],
+    techStack: 'Python | Flutter | PostgreSQL | Flask',
+    link: '#',
+  },
 ];
 
 export default function Projects() {
@@ -91,7 +104,7 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {project.keyContributions && (
+              {project.keyContributions.length > 0 && (
                 <div className="mb-4">
                   <p className="text-sm font-semibold mb-2">Key Contributions:</p>
                   <ul className="list-none space-y-1">
